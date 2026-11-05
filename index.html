@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0a0a0a">
+<title>Mixed Bomber</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>🔥 MIXED BOMBER</h1>
+    <p class="sub">SMS + Call + WhatsApp • Infinite</p>
+  </header>
+
+  <section id="config" class="card">
+    <h2>⚙️ Config</h2>
+    <label>Bot Token</label>
+    <input type="text" id="botToken" placeholder="123456:ABC-DEF...">
+    <label>Admin ID (Telegram)</label>
+    <input type="number" id="adminId" placeholder="123456789">
+    <button id="saveConfig" class="btn primary">Save Config</button>
+  </section>
+
+  <section id="control" class="card">
+    <h2>🎯 Target</h2>
+    <input type="tel" id="phone" placeholder="9876543210" maxlength="10">
+    <div class="mode-row">
+      <button class="mode-btn active" data-mode="all">MIXED</button>
+      <button class="mode-btn" data-mode="sms">SMS</button>
+      <button class="mode-btn" data-mode="call">CALL</button>
+      <button class="mode-btn" data-mode="wa">WA</button>
+    </div>
+    <div class="btn-row">
+      <button id="startBtn" class="btn danger">START BOMB</button>
+      <button id="stopBtn" class="btn stop" disabled>STOP</button>
+    </div>
+  </section>
+
+  <section id="status" class="card">
+    <h2>📊 Live Status</h2>
+    <div id="statusBox">
+      <p>Status: <span id="st">Idle</span></p>
+      <p>Target: <span id="tg">—</span></p>
+      <p>Mode: <span id="md">—</span></p>
+      <p>Success: <span id="ok">0</span> | Fail: <span id="fl">0</span></p>
+      <p>Cycles: <span id="cy">0</span> | Speed: <span id="sp">0</span> req/s</p>
+      <p>Time: <span id="tm">0s</span></p>
+    </div>
+  </section>
+
+  <section id="log" class="card">
+    <h2>📜 Log</h2>
+    <div id="logBox"></div>
+  </section>
+
+  <footer>
+    <p>APIs loaded: <span id="apiCount">0</span></p>
+    <p class="note">Use only on numbers you own.</p>
+  </footer>
+</div>
+<script src="js/apis.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
